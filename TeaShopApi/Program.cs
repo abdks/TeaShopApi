@@ -1,6 +1,18 @@
+using TeaShopApiBusinessLayer.Abstract;
+using TeaShopApiBusinessLayer.Concrete;
+using TeaShopApiDataAccessLayer.Abstract;
+using TeaShopApiDataAccessLayer.Context;
+using TeaShopApiDataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IDrinkDal, EfDrinkDal>();
+builder.Services.AddScoped<IDrinkService,DrinkManager>();
+
+builder.Services.AddDbContext<TeaContext>();
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
