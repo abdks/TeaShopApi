@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IDrinkDal, EfDrinkDal>();
 builder.Services.AddScoped<IDrinkService,DrinkManager>();
 
+builder.Services.AddScoped<IQuestionDal, EfQuestionDal>();
+builder.Services.AddScoped<IQuestionService, QuestionManager>();
+
 builder.Services.AddDbContext<TeaContext>();
 
 
