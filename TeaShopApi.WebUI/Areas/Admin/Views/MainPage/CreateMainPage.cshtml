@@ -1,0 +1,24 @@
+﻿@using TeaShopApi.WebUI.Dtos.MainPageDtos
+@model CreateMainPageDto
+@{
+    ViewData["Title"] = "CreateMainPage";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Yeni Ana Sayfa Girişi</h1>
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+ 
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@using TeaShopApi.WebUI.Dtos.AboutDtos
+@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="AboutID"/>
+    <label>Adres</label>
+    <input type="text" asp-for="Adress" class="form-control" />
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="text" asp-for="No" class="form-control" />
+    <br />
+    <label>Mail</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <br />
+    <label>Twitter</label>
+    <input type="text" asp-for="Twitter" class="form-control" />
+    <br />
+    <label>Facebook</label>
+    <input type="text" asp-for="Facebook" class="form-control" />
+    <br />
+    <label>Instagram</label>
+    <input type="text" asp-for="Instagram" class="form-control" />
+    <br />
+    <label>Linkedln</label>
+    <input type="text" asp-for="Linkedln" class="form-control" />
+    <br />
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

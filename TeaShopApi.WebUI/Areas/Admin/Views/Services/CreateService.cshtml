@@ -1,0 +1,23 @@
+﻿@using TeaShopApi.WebUI.Dtos.ServicesDtos
+@model CreateServiceDto
+@{
+    ViewData["Title"] = "CreateService";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Yeni Hizmet Girişi</h1>
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" asp-for="Image" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
+

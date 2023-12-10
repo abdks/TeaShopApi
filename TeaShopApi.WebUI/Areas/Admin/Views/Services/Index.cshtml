@@ -1,0 +1,59 @@
+﻿@model List<TeaShopApi.WebUI.Dtos.ServicesDtos.ResultServiceDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="row">
+	<!-- [ sample-page ] start -->
+	<div class="col-sm-12">
+		<div class="card">
+
+			<div class="card-header">
+				<h5>Hizmet Listesi</h5>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover">
+					<tr>
+						<th>#</th>
+						<th>Başlık</th>
+						<th>Açıklama</th>
+						<th>Resim</th>
+						
+						<th>Sil</th>
+						<th>Güncelle</th>
+					</tr>
+				@* 	@foreach (var item in Model)
+					{
+						<tr>
+							<td>@item.ServicesID</td>
+							<td>@item.Title</td>
+							<td>@item.Description</td>
+							<td>@item.Image</td>
+
+							<td><a href="/Admin/Services/DeleteService/@item.ServicesID" class="btn btn-outline-danger">Sil</a></td>
+							<td><a href="/Admin/Services/UpdateService/@item.ServicesID" class="btn btn-outline-success">Güncelle</a></td>
+						</tr>
+					} *@
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>@item.ServicesID</td>
+							<td>@item.Title</td>
+							<td>@item.Description</td>
+							<td>@item.Image</td>
+							<td><a href="/Admin/Services/DeleteService/@item.ServicesID" class="btn btn-outline-danger">Sil</a></td>
+							<td><a href="/Admin/Services/UpdateService/@item.ServicesID" class="btn btn-outline-danger">Güncelle</a></td>
+						</tr>
+					
+					}
+				</table>
+				<a href="/Admin/Services/CreateService" class="btn btn-outline-primary">Yeni Hizmet Girişi</a>
+
+			</div>
+		</div>
+	</div>
+	<!-- [ sample-page ] end -->
+</div>

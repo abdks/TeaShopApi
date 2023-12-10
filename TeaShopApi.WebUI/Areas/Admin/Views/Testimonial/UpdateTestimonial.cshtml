@@ -1,0 +1,23 @@
+﻿@using TeaShopApi.WebUI.Dtos.TestimonialDtos
+@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Referans Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="testimonialID"/>
+    <label>Referansın Adını Yazınız</label>
+    <input type="text" asp-for="testimonialName" class="form-control" />
+    <br />
+    <label>Referansın Açıklamasını Yazınız</label>
+    <input type="text" asp-for="testimonialComment" class="form-control" />
+    <br />
+    <label>Referansın Resimini Ekleyiniz</label>
+    <input type="text" asp-for="testimonialImageUrl" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Referansı Güncelle</button>
+</form>

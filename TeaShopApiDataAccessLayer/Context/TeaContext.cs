@@ -21,5 +21,12 @@ namespace TeaShopApiDataAccessLayer.Context
         public DbSet<Message> Messages { get; set; }    
         public  DbSet<Question> Questions { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<About> Abouts { get; set; }
+        public DbSet<MainPage> MainPages { get; set; }
+
+        public DbSet<Services> Services { get; set; }
+        public DbSet<Events> Events { get; set; }
+        public DbSet<Chefs> Chefs { get; set; }
+
     }
 }

@@ -1,0 +1,22 @@
+﻿@using TeaShopApi.WebUI.Dtos.TestimonialDtos
+@model CreateTestimonialDto
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Yeni Referans Girişi</h1>
+
+<form method="post">
+    <label>Referansın Adını Yazınız</label>
+    <input type="text" asp-for="testimonialName" class="form-control" />
+    <br />
+    <label>Referansın Açıklamasını Yazınız</label>
+    <input type="text" asp-for="testimonialComment" class="form-control" />
+    <br />
+    <label>Referansın Resimini Ekleyiniz</label>
+    <input type="text" asp-for="testimonialImageUrl" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Referansı Ekle</button>
+</form>

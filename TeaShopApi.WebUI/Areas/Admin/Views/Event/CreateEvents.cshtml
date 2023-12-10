@@ -1,0 +1,28 @@
+﻿@using TeaShopApi.WebUI.Dtos.EventsDtos
+@model CreateEventsDto
+@{
+    ViewData["Title"] = "CreateEvents";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+
+<h1>Yeni Etkinlik Girişi</h1>
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" asp-for="Image" class="form-control" />
+    <br />
+  
+    <button class="btn btn-primary">Ekle</button>
+</form>
+
