@@ -63,6 +63,63 @@ namespace TeaShopApiDataAccessLayer.Migrations
                     b.ToTable("Abouts");
                 });
 
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.AboutPage", b =>
+                {
+                    b.Property<int>("AboutPageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AboutPageID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("No")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AboutPageID");
+
+                    b.ToTable("AboutPages");
+                });
+
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.BreakFast", b =>
+                {
+                    b.Property<int>("BreakFastID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BreakFastID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BreakFastID");
+
+                    b.ToTable("BreakFasts");
+                });
+
             modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Chefs", b =>
                 {
                     b.Property<int>("ChefsID")
@@ -92,28 +149,60 @@ namespace TeaShopApiDataAccessLayer.Migrations
                     b.ToTable("Chefs");
                 });
 
-            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Drink", b =>
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Desserts", b =>
                 {
-                    b.Property<int>("DrinkID")
+                    b.Property<int>("DessertsID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DrinkID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DessertsID"), 1L, 1);
 
-                    b.Property<string>("DrinkImageUrl")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DrinkName")
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("DrinkPrice")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("DrinkID");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.ToTable("Drinks");
+                    b.HasKey("DessertsID");
+
+                    b.ToTable("desserts");
+                });
+
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Drinks", b =>
+                {
+                    b.Property<int>("DrinksID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DrinksID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DrinksID");
+
+                    b.ToTable("drinks");
                 });
 
             modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Events", b =>
@@ -142,6 +231,51 @@ namespace TeaShopApiDataAccessLayer.Migrations
                     b.HasKey("EventsID");
 
                     b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.Gallery", b =>
+                {
+                    b.Property<int>("GalleryID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GalleryID"), 1L, 1);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("GalleryID");
+
+                    b.ToTable("galleries");
+                });
+
+            modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.MainFood", b =>
+                {
+                    b.Property<int>("MainFoodID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MainFoodID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MainFoodID");
+
+                    b.ToTable("MainFoods");
                 });
 
             modelBuilder.Entity("TeaShopApiEntityLayer.Concrete.MainPage", b =>

@@ -1,0 +1,18 @@
+﻿@using TeaShopApi.WebUI.Dtos.GalleryDtos
+@model CreateGalleryDto
+@{
+    ViewData["Title"] = "CreateGallery";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Yeni Resim Girişi</h1>
+
+<form method="post">
+    <label>Resim</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+   
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

@@ -1,0 +1,20 @@
+﻿@using TeaShopApi.WebUI.Dtos.GalleryDtos
+@model UpdateGalleryDto
+@{
+    ViewData["Title"] = "UpdateGallery";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Resim Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="GalleryID"/>
+    <label>Resim</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+
+
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

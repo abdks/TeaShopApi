@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TeaShopApi.DtoLayer.DrinkDtos;
+using TeaShopApi.DtoLayer.DrinksDtos;
 using TeaShopApi.DtoLayer.QuestionDtos;
 using TeaShopApi.DtoLayer.TestimonialDtos;
 using TeaShopApiBusinessLayer.Abstract;

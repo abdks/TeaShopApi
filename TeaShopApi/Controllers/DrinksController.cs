@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TeaShopApi.DtoLayer.DrinkDtos;
+using TeaShopApi.DtoLayer.BreakFastDtos;
+using TeaShopApi.DtoLayer.DrinksDtos;
 using TeaShopApiBusinessLayer.Abstract;
 using TeaShopApiEntityLayer.Concrete;
 
@@ -10,55 +11,58 @@ namespace TeaShopApi.Controllers
     [ApiController]
     public class DrinksController : ControllerBase
     {
-        private readonly IDrinkService _drinkService;
+        private readonly IDrinksService _drinksService;
 
-        public DrinksController(IDrinkService drinkService)
+        public DrinksController(IDrinksService drinksService)
         {
-            _drinkService = drinkService;
+            _drinksService = drinksService;
         }
         [HttpGet]
-        public IActionResult DrinkList()
+        public IActionResult DrinksList()
         {
-            var values = _drinkService.TGetListAll();
+            var values = _drinksService.TGetListAll();
             return Ok(values);
         }
         [HttpPost]
-        public IActionResult CreateDrink(CreateDrinkDto createDrinkDto)
+        public IActionResult CreateDrinks(CreateDrinksDto createDrinksDto)
         {
-            Drink drink = new Drink()
-            {
-                DrinkImageUrl = createDrinkDto.DrinkImageUrl,
-                DrinkName = createDrinkDto.DrinkName,
-                DrinkPrice = createDrinkDto.DrinkPrice
-            };
-            _drinkService.TInsert(drink);
-            return Ok("İçeceğiniz Eklendi");
-            
+           Drinks drinks = new Drinks()
+           {
+               Description = createDrinksDto.Description,
+               Title = createDrinksDto.Title,
+               ImageUrl = createDrinksDto.ImageUrl,
+               Price = createDrinksDto.Price
+           };
+            _drinksService.TInsert(drinks);
+            return Ok("İçecek Öğesi Eklendi");
+
         }
         [HttpDelete]
-        public IActionResult DeleteDrink(int id)
+        public IActionResult DeleteDrinks(int id)
         {
-            var value = _drinkService.TGetById(id);
-            _drinkService.TDelete(value);
-            return Ok("İçecekSilindi");
+            var value = _drinksService.TGetById(id);
+            _drinksService.TDelete(value);
+            return Ok("İçecek Öğesi Silindi");
         }
         [HttpGet("{id}")]
-        public IActionResult GetDrink(int id) 
+        public IActionResult GetDrinks(int id)
         {
-            var value = _drinkService.TGetById(id);
+            var value = _drinksService.TGetById(id);
             return Ok(value);
         }
         [HttpPut]
-        public IActionResult UpdateDrink(UpdateDrinkDto updateDrinkDto)
+        public IActionResult UpdateDrinks(UpdateDrinksDto updateDrinksDto)
         {
-            Drink drink = new Drink()
+            Drinks Drinks = new Drinks()
             {
-                DrinkImageUrl = updateDrinkDto.DrinkImageUrl,
-                DrinkName = updateDrinkDto.DrinkName,
-                DrinkPrice = updateDrinkDto.DrinkPrice,
-                DrinkID = updateDrinkDto.DrinkID
+                DrinksID = updateDrinksDto.DrinksID,
+                Description = updateDrinksDto.Description,
+                Title = updateDrinksDto.Title,
+                ImageUrl = updateDrinksDto.ImageUrl,
+                Price = updateDrinksDto.Price
+
             };
-            _drinkService.TUpdate(drink);
+            _drinksService.TUpdate(Drinks);
             return Ok("Güncelleme Yapıldı");
         }
     }

@@ -17,7 +17,6 @@ namespace TeaShopApiDataAccessLayer.Context
             optionsBuilder.UseSqlServer("Server=ABDULLAH;initial Catalog=TeaShopDb;integrated Security=true;");
 
         }
-        public DbSet<Drink> Drinks { get; set; }
         public DbSet<Message> Messages { get; set; }    
         public  DbSet<Question> Questions { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
@@ -27,6 +26,12 @@ namespace TeaShopApiDataAccessLayer.Context
         public DbSet<Services> Services { get; set; }
         public DbSet<Events> Events { get; set; }
         public DbSet<Chefs> Chefs { get; set; }
+        public DbSet<Gallery> galleries { get; set; }
+        public DbSet<AboutPage> AboutPages { get; set; }
+        public DbSet<BreakFast> BreakFasts { get; set; }
+        public DbSet<MainFood> MainFoods { get; set;}
+        public DbSet<Drinks> drinks { get; set;}
+        public DbSet<Desserts> desserts { get; set; }
 
     }
 }

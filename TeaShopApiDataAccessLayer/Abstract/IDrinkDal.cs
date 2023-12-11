@@ -7,7 +7,7 @@ using TeaShopApiEntityLayer.Concrete;
 
 namespace TeaShopApiDataAccessLayer.Abstract
 {
-    public interface IDrinkDal: IGenericDal<Drink>
+    public interface IDrinkDal:IGenericDal<Drinks>
     {
     }
 }

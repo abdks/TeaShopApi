@@ -2,10 +2,10 @@
 {
 	public class ResultDrinkDto
 	{
-		//Eğer veri türlerini bilmiyorsan apiden get fonksiyonu ile verileri kopyala gelen verileri özel yapıştır yap en üstte edit kısmından 
-		public int DrinkID { get; set; }
-		public string drinkName { get; set; }
-		public decimal drinkPrice { get; set; }
-		public string drinkImageUrl { get; set; }
-	}
+        public int DrinksID { get; set; }
+        public string Description { get; set; }
+        public string Title { get; set; }
+        public string ImageUrl { get; set; }
+        public decimal Price { get; set; }
+    }
 }

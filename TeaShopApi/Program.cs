@@ -7,18 +7,23 @@ using TeaShopApiDataAccessLayer.EntityFramework;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IDrinkDal, EfDrinkDal>();
-builder.Services.AddScoped<IDrinkService,DrinkManager>();
+//builder.Services.AddScoped<IDrinkDal, EfDrinkDal>();
+//builder.Services.AddScoped<ýdri,DrinkManager>();
 
 builder.Services.AddScoped<IQuestionDal, EfQuestionDal>();
 builder.Services.AddScoped<IQuestionService, QuestionManager>();
 
-builder.Services.AddScoped<IStatiscDal, EfStatiscDal>();
-builder.Services.AddScoped<IStatisticsService, StatisticsManager>();
 
 
 builder.Services.AddScoped<ITestimonialDal, EfTestimonial>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+
+builder.Services.AddScoped<IAboutPageDal, EfAboutPageDal>();
+builder.Services.AddScoped<IAboutPageService,AboutPageManager>();
+
+
+builder.Services.AddScoped<IGalleryDal, EfGalleryDal>();
+builder.Services.AddScoped<IGalleryService, GalleryManager>();
 
 builder.Services.AddScoped<IEventDal, EfEventsDal>();
 builder.Services.AddScoped<IEventService,EventsManager>();
@@ -37,6 +42,21 @@ builder.Services.AddScoped<IAboutService,AboutManager>();
 
 builder.Services.AddScoped<IMessageDal, EfMessageDal>();
 builder.Services.AddScoped<IMessageService, MessageManager>();
+
+builder.Services.AddScoped<IDrinkDal, EfDrinksDal>();
+builder.Services.AddScoped<IDrinksService, DrinksManager>();
+
+builder.Services.AddScoped<IBreakFastDal,EfBreakFastDal>();
+builder.Services.AddScoped<IBreakFastService, BreakFastManager>();
+
+builder.Services.AddScoped<IMainFoodDal, EfMainFoodDal>();
+builder.Services.AddScoped<IMainFoodService, MainFoodManager>();
+
+builder.Services.AddScoped<IDessertsDal, EfDessertsDal>();
+builder.Services.AddScoped<IDessertsService, DessertsManager>();
+
+
+
 
 builder.Services.AddDbContext<TeaContext>();
 
