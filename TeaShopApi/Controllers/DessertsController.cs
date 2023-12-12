@@ -16,18 +16,24 @@ namespace TeaShopApi.Controllers
         {
             _dessertsService = dessertsService;
         }
-        [HttpPost]
-        public IActionResult CreateDesserts(CreateDessertsDto createDessertsDto)
+        [HttpGet]
+        public IActionResult DessertsList()
         {
-            Desserts Desserts = new Desserts()
-            {
-                Description = createDessertsDto.Description,
-                Title = createDessertsDto.Title,
-                ImageUrl = createDessertsDto.ImageUrl,
-                Price = createDessertsDto.Price
-            };
-            _dessertsService.TInsert(Desserts);
-            return Ok("Kahvaltı Öğesi Eklendi");
+            var values = _dessertsService.TGetListAll();
+            return Ok(values);
+        }
+        [HttpPost]
+        public IActionResult CreateDessert(CreateDessertsDto createDessertsDto)
+        {
+           Desserts desserts = new Desserts()
+           {
+               Description = createDessertsDto.Description,
+               Title = createDessertsDto.Title,
+               ImageUrl = createDessertsDto.ImageUrl,
+               Price = createDessertsDto.Price
+           };
+            _dessertsService.TInsert(desserts);
+            return Ok("Tatlı Öğesi Eklendi");
 
         }
         [HttpDelete]
@@ -35,7 +41,7 @@ namespace TeaShopApi.Controllers
         {
             var value = _dessertsService.TGetById(id);
             _dessertsService.TDelete(value);
-            return Ok("Kahvaltı Öğesi Silindi");
+            return Ok("Tatlı Öğesi Silindi");
         }
         [HttpGet("{id}")]
         public IActionResult GetDesserts(int id)
@@ -53,6 +59,7 @@ namespace TeaShopApi.Controllers
                 Title = updateDessertsDto.Title,
                 ImageUrl = updateDessertsDto.ImageUrl,
                 Price = updateDessertsDto.Price
+
             };
             _dessertsService.TUpdate(Desserts);
             return Ok("Güncelleme Yapıldı");

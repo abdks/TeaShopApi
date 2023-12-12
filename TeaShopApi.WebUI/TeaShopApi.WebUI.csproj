@@ -9,7 +9,8 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="ViewComponents\" />
+    <Folder Include="Areas\UI\Data\" />
+    <Folder Include="Areas\UI\Models\" />
     <Folder Include="Views\Shared\Components\" />
   </ItemGroup>
 
