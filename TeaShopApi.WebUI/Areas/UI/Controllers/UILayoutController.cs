@@ -42,10 +42,7 @@ namespace TeaShopApi.WebUI.Areas.UI.Controllers
         {
             return PartialView();
         }
-        public PartialViewResult PartialHero()
-        {
-            return PartialView();
-        }
+       
         public PartialViewResult PartialMain()
         {
             return PartialView();

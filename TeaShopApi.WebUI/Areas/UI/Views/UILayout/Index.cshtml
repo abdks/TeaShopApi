@@ -1,6 +1,8 @@
 ﻿
 @{
     Layout = null;
+    var actionUrl = Url.Action("PartialHero", "UILayout");
+
 }
 
 <!DOCTYPE html>
@@ -10,37 +12,36 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-@*    @await Component.InvokeAsync("HeaderComponent") *@
 
  @Html.Partial("PartialHeader","UILayout")
-  <!-- ======= Hero Section ======= -->
-    @Html.Partial("PartialHero","UILayout")
-    @Html.Partial("PartialMain","UILayout")
+
+    @await Component.InvokeAsync("_PartialHero")
+
+    @await Component.InvokeAsync("_PartialAboutus")
 
     <!-- ======= Why Us Section ======= -->
-    @Html.Partial("PartialWhy","UILayout")
+    @await Component.InvokeAsync("_PartialWhy")
 
     <!-- ======= Stats Counter Section ======= -->
     @Html.Partial("PartialStats","UILayout")
 
     <!-- ======= Menu Section ======= -->
-    @Html.Partial("PartialMenu","UILayout")
+    @await Component.InvokeAsync("_PartialMenu")
 
     <!-- ======= Testimonials Section ======= -->
-    @Html.Partial("PartialTestimonial","UILayout")
+    @await Component.InvokeAsync("_PartialTest")
     @RenderBody()
 
     <!-- ======= Events Section ======= -->
-    @Html.Partial("PartialEvent","UILayout")
+    @await Component.InvokeAsync("_PartialEvent")
 
     <!-- ======= Chefs Section ======= -->
-    @Html.Partial("PartialChef","UILayout")
+    @await Component.InvokeAsync("_PartialChef")
     <!-- ======= Book A Table Section ======= -->
     @Html.Partial("PartialBook","UILayout")
 
     <!-- ======= Gallery Section ======= -->
-    @Html.Partial("PartialGallery","UILayout")
+    @await Component.InvokeAsync("_PartialGallery")
 
     <!-- ======= Contact Section ======= -->
     @Html.Partial("PartialContact","UILayout")

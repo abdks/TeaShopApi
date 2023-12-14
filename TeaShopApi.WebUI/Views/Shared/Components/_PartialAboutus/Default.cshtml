@@ -1,0 +1,44 @@
+﻿@model List<TeaShopApi.WebUI.Dtos.AboutPageDtos.ResultAboutPageDto>
+
+@{
+    Layout = null;
+}
+
+<main id="main">
+    <section id="about" class="about">
+        @foreach (var item in Model)
+        {
+   
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+                <h2>Hakkımızda</h2>
+                <p>Learn More <span>About Us</span></p>
+            </div>
+
+            <div class="row gy-4">
+                <div class="col-lg-7 position-relative about-img" style="background-image: url(/Yummy/assets/img/about.jpg) ;" data-aos="fade-up" data-aos-delay="150">
+                    <div class="call-us position-absolute">
+                        <h4>Bize Ulaşın</h4>
+                        <p>@item.No</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
+                    <div class="content ps-0 ps-lg-5">
+                        <p class="fst-italic">
+                            @item.Description
+                        </p>
+                      
+
+                        <div class="position-relative mt-4">
+                                <img src="https://localhost:7273/Yummy/assets/img/about-2.jpg" class="img-fluid" alt="">
+                            <a href="@item.VideoUrl" class="glightbox play-btn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        }
+    </section><!-- End About Section -->
+       

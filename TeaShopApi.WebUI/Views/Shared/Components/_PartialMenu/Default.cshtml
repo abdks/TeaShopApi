@@ -1,0 +1,157 @@
+﻿@model TeaShopApi.WebUI.ViewComponents.MenuViewModel
+
+
+@{
+    Layout = null;
+}
+
+<section id="menu" class="menu">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+            <h2>Our Menu</h2>
+            <p>Check Our <span>Yummy Menu</span></p>
+        </div>
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+            <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+                    <h4>Starters</h4>
+                </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+                    <h4>Breakfast</h4>
+                </a><!-- End tab nav item -->
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+                    <h4>Lunch</h4>
+                </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
+                    <h4>Dinner</h4>
+                </a>
+            </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="tab-pane fade active show" id="menu-starters">
+
+                <div class="tab-header text-center">
+                    <p>Menu</p>
+                    <h3>Ana Yemekler</h3>
+                </div>
+
+                <div class="row gy-5">
+                    @foreach (var apo in Model.MainFood)
+                    {
+                        
+                   
+                    <div class="col-lg-4 menu-item">
+                            <a href="~/Yummy/assets/img/menu/menu-item-1.png" class="glightbox"><img src="@apo.ImageUrl" class="menu-img img-fluid" alt=""></a>
+                            <h4>@apo.Title</h4>
+                        <p class="ingredients">
+                                @apo.Description
+                        </p>
+                        <p class="price">
+                                @apo.Price
+                        </p>
+                    </div><!-- Menu Item -->
+                    }
+
+                </div>
+            </div><!-- End Starter Menu Content -->
+
+            <div class="tab-pane fade" id="menu-breakfast">
+
+                <div class="tab-header text-center">
+                    <p>Menu</p>
+                    <h3>Kahvaltılıklar</h3>
+                </div>
+
+                <div class="row gy-5">
+                    @foreach (var dee in Model.BreakFast)
+                    {
+                        
+                   
+                    <div class="col-lg-4 menu-item">
+                            <a href="#" class="glightbox"><img src="@dee.ImageUrl" class="menu-img img-fluid" alt=""></a>
+                            <h4>@dee.Title</h4>
+                        <p class="ingredients">
+                                @dee.Description
+                        </p>
+                        <p class="price">
+                                @dee.Price
+                        </p>
+                    </div><!-- Menu Item -->
+                    }
+
+                </div>
+            </div><!-- End Breakfast Menu Content -->
+
+            <div class="tab-pane fade" id="menu-lunch">
+
+                <div class="tab-header text-center">
+                    <p>Menu</p>
+                    <h3>Tatlılar</h3>
+                </div>
+
+                <div class="row gy-5">
+                    @foreach (var eve in Model.Desserts)
+                    {
+                        <div class="col-lg-4 menu-item">
+                            <a href="~/Yummy/assets/img/menu/menu-item-1.png" class="glightbox"><img src="@eve.ImageUrl" class="menu-img img-fluid" alt=""></a>
+                            <h4>@eve.Title</h4>
+                            <p class="ingredients">
+                                @eve.Description
+                            </p>
+                            <p class="price">
+                                @eve.Price
+                            </p>
+                        </div>
+
+                        <!-- Menu Item -->
+                    }
+                 
+
+                </div>
+            </div><!-- End Lunch Menu Content -->
+
+            <div class="tab-pane fade" id="menu-dinner">
+
+                <div class="tab-header text-center">
+                    <p>Menu</p>
+                    <h3>İçecekler</h3>
+                </div>
+
+                <div class="row gy-5">
+                    @foreach (var bre in Model.Drinks)
+                    {
+                        
+                 
+                    <div class="col-lg-4 menu-item">
+                            <a href="~/Yummy/assets/img/menu/menu-item-1.png" class="glightbox"><img src="@bre.ImageUrl" class="menu-img img-fluid" alt=""></a>
+                            <h4>@bre.Title</h4>
+                        <p class="ingredients">
+                                @bre.Description ₺
+                        </p>
+                        <p class="price">
+                                @bre.Price
+                        </p>
+                    </div><!-- Menu Item -->
+                    }
+
+                </div>
+            </div><!-- End Dinner Menu Content -->
+
+        </div>
+
+    </div>
+</section><!-- End Menu Section -->
